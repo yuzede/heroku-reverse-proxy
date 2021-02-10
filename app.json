@@ -8,7 +8,7 @@
 	"repository": "https://github.com/jdownloarder/heroku-reverse-proxy",
 	"buildpacks": [
 		{
-			"url": "https://github.com/heroku/heroku-buildpack-nginx"
+			"url": "https://github.com/heroku/heroku-buildpack-nginx.git"
 		}
 	],
 	"env": {

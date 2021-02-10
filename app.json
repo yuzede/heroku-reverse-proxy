@@ -1,14 +1,14 @@
 {
 	"name": "Reverse Proxy",
-	"description": "Spin up a reverse proxy quickly on Heroku",
+	"description": "Simple reverse proxy for Heroku",
 	"keywords": [
 		"reverse proxy",
 		"nginx"
 	],
-	"repository": "https://github.com/jdownloarder/heroku-reverse-proxy",
+	"repository": "https://github.com/jdownloader/heroku-reverse-proxy",
 	"buildpacks": [
 		{
-			"url": "https://github.com/heroku/heroku-buildpack-nginx.git"
+			"url": "https://github.com/heroku/heroku-buildpack-nginx"
 		}
 	],
 	"env": {

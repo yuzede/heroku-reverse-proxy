@@ -2,7 +2,8 @@
 FROM nginx
 
 # Copy the NGINX configuration file
-#COPY nginx.conf /etc/nginx/nginx.conf
+# COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose the necessary ports
 EXPOSE 80 6001

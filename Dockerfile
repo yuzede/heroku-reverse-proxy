@@ -1,31 +1,23 @@
-# Use the NGINX base image
-FROM nginx
+FROM nginx:latest
 
-# Copy the NGINX configuration file
-# COPY nginx.conf /etc/nginx/nginx.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Install Node.js
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+    apt-get install -y nodejs
 
-# Expose the necessary ports
-EXPOSE 80 6001
-
-# Set the working directory to /app
-WORKDIR /app
-
-# Copy the Laravel Echo Server configuration
-COPY . .
-
-# Install Node.js and dependencies
-RUN apt-get update && apt-get install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get install -y nodejs
-
-RUN apt-get update && apt-get install -y supervisor
-
-# Install Laravel Echo Server globally
+# Install laravel-echo-server globally
 RUN npm install -g laravel-echo-server
 
-# Run the Laravel Echo Server
-COPY supervisor.conf /etc/supervisor/conf.d/supervisor.conf
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Start Supervisor to manage processes
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisor.conf"]
+# Copy Laravel Echo Server configuration
+COPY laravel-echo-server.json /laravel-echo-server.json
+
+# Copy the shell script
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+EXPOSE 80
+CMD ["/start.sh"]

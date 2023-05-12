@@ -14,6 +14,10 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy Laravel Echo Server configuration
 COPY laravel-echo-server.json /laravel-echo-server.json
+COPY extract_env.sh /extract_env.sh
+RUN touch .env
+
+
 
 # Copy the shell script
 COPY start.sh /start.sh

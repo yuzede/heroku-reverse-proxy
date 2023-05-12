@@ -10,7 +10,7 @@ RUN apt-get update && \
 RUN npm install -g laravel-echo-server
 
 # Copy nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf.template /nginx.conf.template
 
 # Copy Laravel Echo Server configuration
 COPY laravel-echo-server.json /laravel-echo-server.json

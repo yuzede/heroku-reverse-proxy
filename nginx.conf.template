@@ -2,7 +2,7 @@ events {}
 
 http {
     server {
-        listen <%= ENV["PORT"] %>;
+        listen ${PORT};
 
         location / {
             proxy_pass https://yuze-api-staging.herokuapp.com;

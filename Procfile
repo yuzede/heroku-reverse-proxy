@@ -1,1 +1,1 @@
-web: bin/start-nginx bundle exec laravel-echo-server start
+web: bin/start-nginx laravel-echo-server start

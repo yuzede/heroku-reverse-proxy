@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "foreman": "^3.0.1",
     "laravel-echo-server": "^1.6.3"
   },
   "engines": {

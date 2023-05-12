@@ -1,0 +1,21 @@
+{
+  "authHost": "",
+  "authEndpoint": "/broadcasting/auth",
+  "database": "redis",
+  "devMode": true,
+  "host": "0.0.0.0",
+  "port": "6001",
+  "protocol": "http",
+  "databaseConfig": {
+    "redis": {}
+  },
+  "socketio": {},
+  "sslCertPath": "",
+  "sslKeyPath": "",
+  "apiOriginAllow": {
+    "allowCors": true,
+    "allowOrigin": "*",
+    "allowMethods": "GET, POST",
+    "allowHeaders": "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id, Upgrade, Connection, X-Real-IP, X-Forwarded-For, Host, X-Forwarded-Proto"
+  }
+}

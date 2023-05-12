@@ -5,7 +5,7 @@ FROM nginx
 #COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose the necessary ports
-EXPOSE 80
+EXPOSE 80 6001
 
 # Set the working directory to /app
 WORKDIR /app

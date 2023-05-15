@@ -2,7 +2,7 @@
   "authHost": "",
   "authEndpoint": "/broadcasting/auth",
   "database": "redis",
-  "devMode": true,
+  "devMode": false,
   "host": null,
   "port": "6001",
   "protocol": "http",

@@ -1,6 +1,9 @@
 events {}
 
 http {
+    # Set maximum allowed size for client request body
+    client_max_body_size 10M;
+
     server {
         listen ${PORT};
 
